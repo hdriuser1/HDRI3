@@ -18,7 +18,8 @@ import {
   UserCheck,
   GraduationCap,
   ArrowUp,
-  Heart
+  Heart,
+  Camera
 } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 
@@ -76,12 +77,12 @@ function HomePage() {
       link: "/programs/community-education"
     },
     {
-      icon: Users,
-      title: "Women's Health",
-      description: "Specialized services for women, including reproductive health education and support programs.",
-      color: "pink",
-      gradient: "from-pink-600 to-pink-700",
-      link: "/programs/womens-health"
+      icon: Camera,
+      title: "Gallery",
+      description: "Visual documentation of our programs, community events, and the impact we've made over four decades of service.",
+      color: "indigo",
+      gradient: "from-indigo-600 to-indigo-700",
+      link: "/gallery"
     },
     {
       icon: Heart,
@@ -113,6 +114,7 @@ function HomePage() {
               <div className="ml-10 flex items-baseline space-x-8">
                 <a href="#about" className="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-teal-50">About</a>
                 <a href="#programs" className="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-teal-50">Programs</a>
+                <Link to="/gallery" className="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-teal-50">Gallery</a>
                 <a href="#impact" className="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-teal-50">Impact</a>
                 <a href="#contact" className="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-teal-50">Contact</a>
                 <a href="#contact" className="bg-gradient-to-r from-teal-600 to-teal-700 text-white px-6 py-2 rounded-full text-sm font-medium hover:from-teal-700 hover:to-teal-800 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">Get Help</a>
@@ -137,6 +139,7 @@ function HomePage() {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <a href="#about" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-teal-600 block px-3 py-2 rounded-md text-base font-medium hover:bg-teal-50 transition-colors">About</a>
               <a href="#programs" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-teal-600 block px-3 py-2 rounded-md text-base font-medium hover:bg-teal-50 transition-colors">Programs</a>
+              <Link to="/gallery" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-teal-600 block px-3 py-2 rounded-md text-base font-medium hover:bg-teal-50 transition-colors">Gallery</Link>
               <a href="#impact" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-teal-600 block px-3 py-2 rounded-md text-base font-medium hover:bg-teal-50 transition-colors">Impact</a>
               <a href="#contact" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-teal-600 block px-3 py-2 rounded-md text-base font-medium hover:bg-teal-50 transition-colors">Contact</a>
               <a href="#contact" onClick={() => setIsMenuOpen(false)} className="bg-gradient-to-r from-teal-600 to-teal-700 text-white block px-3 py-2 rounded-md text-base font-medium hover:from-teal-700 hover:to-teal-800 transition-all duration-200 mx-3 text-center">Get Help</a>
@@ -420,8 +423,8 @@ function HomePage() {
             <div>
               <h4 className="text-lg font-semibold mb-6 text-white">Quick Links</h4>
               <div className="space-y-3">
-                {['About Us', 'Our Programs', 'Impact', 'Contact'].map((link, index) => (
-                  <a key={index} href={`#${link.toLowerCase().replace(' ', '')}`} className="block text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 transform">
+                {['About Us', 'Our Programs', 'Gallery', 'Impact', 'Contact'].map((link, index) => (
+                  <a key={index} href={link === 'Gallery' ? '/gallery' : `#${link.toLowerCase().replace(' ', '')}`} className="block text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 transform">
                     {link}
                   </a>
                 ))}

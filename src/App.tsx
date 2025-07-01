@@ -5,7 +5,7 @@ import SubstanceAbuseInterventionPage from './pages/SubstanceAbuseInterventionPa
 import STDHIVAIDSInterventionPage from './pages/STDHIVAIDSInterventionPage';
 import RehabilitationServicesPage from './pages/RehabilitationServicesPage';
 import CommunityEducationPage from './pages/CommunityEducationPage';
-import WomensHealthPage from './pages/WomensHealthPage';
+import GalleryPage from './pages/GalleryPage';
 import CommunityOutreachPage from './pages/CommunityOutreachPage';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
       <Route path="/programs/std-hiv-aids-intervention" element={<STDHIVAIDSInterventionPage />} />
       <Route path="/programs/rehabilitation-services" element={<RehabilitationServicesPage />} />
       <Route path="/programs/community-education" element={<CommunityEducationPage />} />
-      <Route path="/programs/womens-health" element={<WomensHealthPage />} />
+      <Route path="/gallery" element={<GalleryPage />} />
       <Route path="/programs/community-outreach" element={<CommunityOutreachPage />} />
     </Routes>
   );
